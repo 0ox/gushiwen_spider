@@ -1,11 +1,11 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as bs
 import re
 
 
 def get_soup(link):
     response = requests.get(link, headers=headers)
-    soup = BeautifulSoup(response.content, 'lxml')
+    soup = bs(response.content, 'lxml')
     return soup
 
 
